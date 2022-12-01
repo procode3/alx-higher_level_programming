@@ -6,6 +6,7 @@ if __name__ == "__main__":
         print("0 arguments.")
     elif argc == 1:
         print("1 argument:")
+        print("1: {}".format(sys.argv[argc]))
     else:
         print("{} arguments:".format(argc))
         for i in range(argc):
