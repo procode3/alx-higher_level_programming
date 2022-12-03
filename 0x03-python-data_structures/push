@@ -1,4 +1,5 @@
 #!/bin/bash
 git add .
-git commit -m “Fixed an error”
+echo “Enter commit message: “
+git commit -am “$commitMessage”
 git push
