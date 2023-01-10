@@ -17,9 +17,8 @@ class Student:
     def to_json(self, attrs=None):
         """converts class attributes to jason
         representation"""
-
-       if isinstance(attrs, list) and\
-            all(isinstance(item, str) for item in attrs):
+        if isinstance(attrs, list) and \
+                all(isinstance(item, str) for item in attrs):
             result = {}
             for i in attrs:
                 try:
@@ -27,4 +26,5 @@ class Student:
                 except Exception:
                     pass
             return result
-        return self.__dict__ 
+        elif attrs is None:
+            return self.__dict__
