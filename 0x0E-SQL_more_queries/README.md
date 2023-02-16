@@ -1,1 +1,1 @@
-ql queries
+## Solutions to SQL - More queries tasks
