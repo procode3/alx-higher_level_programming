@@ -1,7 +1,7 @@
 #!/bin/usr/node
 
-function (a, b) {
+function add(a, b) {
   return a + b;
 };
 
-export default function;
+export default add;
