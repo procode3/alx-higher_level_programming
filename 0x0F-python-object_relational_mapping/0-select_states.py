@@ -17,4 +17,5 @@ if __name__ = "__main__":
 	cur.fetchall()
 	for row in rows:
 		print(row);
-
+	cur.close()
+	db_conn.close()
