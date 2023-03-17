@@ -1,2 +1,2 @@
-MySQLdb Connection
+ORM in python
 

@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """ selecting with mysqldb """
 import MySQLdb
 import sys
@@ -17,7 +17,7 @@ if __name__ == "__main__":
         print("error connecting")
     cur = connection.cursor()
     try:
-        cur.execute("SELECT * FROM states ORDER BY states.id")
+        cur.execute("SELECT * FROM states WHERE name =''")
         rows = cur.fetchall()
         for row in rows:
             print(row)
