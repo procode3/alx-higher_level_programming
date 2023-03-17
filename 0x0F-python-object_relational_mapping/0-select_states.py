@@ -1,21 +1,27 @@
-#!/usr/bin/env python3
-""" selecting with mysqlDb """
+#!/usr/bin python3
+""" selecting with mysqldb """
 import MySQLdb
 import sys
 
-if __name__ = "__main__":
-	try:
-		db_conn = MySQLdb.connect
-		(host = "localhost", user = sys.arg[1], passwd = sys.arg[2], db = sys.argv[3])
 
-	except:
-		print("Failed to connect to db")
-		return 0 
-
-	cur = db_conn.cursor()
-	cur.exercute ("SELECET * FROM state ORDER BT states.id")
-	cur.fetchall()
-	for row in rows:
-		print(row);
-	cur.close()
-	db_conn.close()
+if __name__ == "__main__":
+    try:
+        connection = MySQLdb.connect(
+            host="localhost",
+            user=sys.argv[1],
+            passwd=sys.argv[2],
+            port=3306,
+            db=sys.argv[3]
+        )
+    except MySQLdb.Error:
+        print("error connecting")
+    cur = connection.cursor()
+    try:
+        cur.execute("SELECT * FROM states ORDER BY states.id")
+        rows = cur.fetchall()
+        for row in rows:
+            print(row)
+    except MySQLdb.Error:
+        print("execution failed")
+    cur.close()
+    connection.close()
