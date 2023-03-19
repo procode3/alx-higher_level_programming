@@ -15,12 +15,15 @@ if __name__ == "__main__":
         )
     except MySQLdb.Error:
         print("error connecting")
-    cur = connection.cursor()
     try:
-        cur.execute("SELECT * FROM states ORDER BY states.id")
+        cur = connection.cursor()
+        cur.execute("SELECT cities.name FROM cities\
+        INNER JOIN states\
+        ON cities.state_id = states.id\
+        WHERE states.name = %s\
+        ORDER BY cities.id", (sys.argv[4],))
         rows = cur.fetchall()
-        for row in rows:
-            print(row)
+        print(", ".join([row[0] for row in rows]))
     except MySQLdb.Error:
         print("execution failed")
     cur.close()
