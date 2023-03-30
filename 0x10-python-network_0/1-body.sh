@@ -1,5 +1,8 @@
 #!/bin/bash
-# send a request to an URL with curl, and displays the size of the body of the response
+# send a request to an URL with curl, and displays the size of the body of the response only for status 200
 
-curl -sL "$1"
+curl -s -o /dev/null -w "%{http_code}" $1 | grep -q 200 && curl -s $1
+
+
+
 
