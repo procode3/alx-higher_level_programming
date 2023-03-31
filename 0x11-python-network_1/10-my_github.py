@@ -3,6 +3,7 @@
 
 import requests
 from sys import argv as av
+from requests.auth import HTTPBasicAuth
 
 if __name__ == '__main__':
     url = 'https://api.github.com/user'
@@ -12,10 +13,9 @@ if __name__ == '__main__':
     except IndexError:
         print('Please enter a username and password')
         exit()
-    header = {
-        'Accept': 'application/vnd.github.v3+json'
-    }
+    auth = HTTPBasicAuth(user, pswd)
+
     auth = (user, pswd)
 
-    res = requests.get(url, headers=header, auth=auth)
-    print(res.json()['id'])
+    res = requests.get(url, auth=auth)
+    print(res.json().get('id'))
