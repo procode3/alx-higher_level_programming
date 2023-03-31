@@ -5,7 +5,7 @@ import requests
 from sys import argv as av
 
 if __name__ == '__main__':
-    url = 'http://503e6f4076ba.bfdc90b8.alx-cod.online:5000/search_user'
+    url = 'http://0.0.0.0:5000/search_user'
     try:
         params = av[1]
     except IndexError:
