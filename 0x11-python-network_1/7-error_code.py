@@ -9,7 +9,7 @@ if __name__ == '__main__':
         res = requests.get(av[1])
         error = res.raise_for_status()
         if not error:
-            print(res.text)	
+            print(res.text)
     except requests.exceptions.HTTPError as error:
         if (res.status_code > 400):
             print(f'Error code: {res.status_code}')
