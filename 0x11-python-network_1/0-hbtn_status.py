@@ -4,7 +4,7 @@ https://alx-intranet.hbtn.io/status
 """
 
 if __name__ == '__main__':
-    """ opening a url with a context manager"""
+    """Opening a url with a context manager"""
     from urllib.request import urlopen
 
     with urlopen('https://alx-intranet.hbtn.io/status') as f:
