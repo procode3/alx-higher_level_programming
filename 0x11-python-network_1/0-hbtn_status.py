@@ -10,6 +10,6 @@ if __name__ == '__main__':
     with urlopen(req) as f:
         html = f.read()
         print('Body response:')
-        print(f'    - type: {type(html)}')
-        print(f'    - content: {html}')
-        print(f'    - utf8 contnent: {html.decode("utf-8")}')
+        print(f'\t- type: {type(html)}')
+        print(f'\t- content: {html}')
+        print(f'\t- utf8 contnent: {html.decode("utf-8")}')
