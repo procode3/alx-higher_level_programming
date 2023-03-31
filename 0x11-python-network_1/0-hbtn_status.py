@@ -5,9 +5,9 @@ https://alx-intranet.hbtn.io/status
 
 if __name__ == '__main__':
     """Opening a url with a context manager"""
-    from urllib.request import urlopen
-
-    with urlopen('https://alx-intranet.hbtn.io/status') as f:
+    from urllib.request import urlopen, Request
+    req = Request('https://alx-intranet.hbtn.io/status')
+    with urlopen(req) as f:
         html = f.read()
         print('Body response:')
         print(f'    - type: {type(html)}')
