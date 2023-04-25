@@ -10,5 +10,5 @@ req(urlPath, (error, res, body) => {
   if (error) {
     console.log(error);
   }
-  console.log(res.statusCode);
+  console.log('code:', res.statusCode);
 });
