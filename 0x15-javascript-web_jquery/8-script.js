@@ -1,3 +1,5 @@
+// JavaScript script that fetches and lists the title
+
 $(document).ready(() => {
   $.get('https://swapi-api.alx-tools.com/api/films/?format=json', function (data) {
     $.each(data.results, function (i, movie) {

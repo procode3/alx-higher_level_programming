@@ -1,3 +1,4 @@
+// JavaScript script that sends a fetch req
 $(document).ready(() => {
   const url = 'https://fourtonfish.com/hellosalut/?lang=fr';
   let response = null;
@@ -18,5 +19,3 @@ $(document).ready(() => {
     $('#hello').text(response);
   }
 });
-
-
